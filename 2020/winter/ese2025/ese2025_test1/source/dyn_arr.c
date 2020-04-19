@@ -24,8 +24,15 @@
 int comparo_fName(const void *pA, const void *pB)
 {
 
-	// PROBLEM #3: complete the code for this function
-	//	       NOTE: PLEASE COMMIT CHANGES ONCE YOUR DONE THIS FUNCTION
+	stuDA_t student_A = *((stuDA_t*) pA); // get student record
+		stuDA_t student_B = *((stuDA_t*) pB);
+
+		char *fName_A = student_A.data.fName; // get family name of student A
+		char *fName_B = student_B.data.fName; // get family name of student B
+
+		return strcmp(fName_A, fName_B);
+
+
 }
 
 /*
@@ -51,8 +58,15 @@ int comparo_gName(const void *pA, const void *pB)
  */
 int comparo_grade(const void *pA, const void *pB)
 {
-	// PROBLEM #4: complete the code for this function
-	//	       NOTE: PLEASE COMMIT CHANGES ONCE YOUR DONE THIS FUNCTION
+
+	stuDA_t student_A = *((stuDA_t*) pA); // Extract student record
+		stuDA_t student_B = *((stuDA_t*) pB);
+
+		float *grade_A = student_A.data.grade; // get grades of student
+		float *grade_B = student_B.data.grade;
+
+		return strcmp(grade_A, grade_B);
+
 }
 
 /*
