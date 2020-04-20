@@ -19,13 +19,32 @@ struct stuRecStruct
     char gname[STRSIZE];
 	 float grade;
 };
-typedef struct stuRecStruct  stuRec_t;
+typedef struct stuRecStruct stuRec_t;
+
+struct stuLLStruct
+{
+	stuRec_t data;
+	struct stuLLStruct *pNext;
+
+};
+
+   typedef struct stuLLStruct stuLL_t;
 /*
  * (private) function creates a new node; if it returns NULL, malloc() was unable to do it!
  */
 stuLL_t* createNodeLinkedList(stuRec_t)
 {
 	stuLL_t* pHEAD =(stull_t*)malloc(sizeof(stull_t));
+	if (pHEAD!=NULL)
+	{
+		pHEAD->data.fname=stdata.fname; // assign data to new node pHEAD
+		pHEAD->data.gname=stdata.gname;
+		pHEAD->data.grade=stdata.grade;
+
+		pHEAD->pNext=NULL;
+
+	}
+	return pHEAD;
 
 
 }
