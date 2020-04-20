@@ -13,14 +13,21 @@
 /*****************************************************
  * FUNCTION DEFINITIONS
  *****************************************************/
-
+struct stuRecStruct
+{
+	char fname[STRSIZE];
+    char gname[STRSIZE];
+	 float grade;
+};
+typedef struct stuRecStruct  stuRec_t;
 /*
  * (private) function creates a new node; if it returns NULL, malloc() was unable to do it!
  */
-stuLL_t* createNodeLinkedList(void)
+stuLL_t* createNodeLinkedList(stuRec_t)
 {
-	// PROBLEM #1: complete the code for this function
-	//	       NOTE: PLEASE COMMIT CHANGES ONCE YOUR DONE THIS FUNCTION
+	stuLL_t* pHEAD =(stull_t*)malloc(sizeof(stull_t));
+
+
 }
 
 /*
