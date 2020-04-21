@@ -21,6 +21,14 @@
  * (private) function provides comparison between two array elements for qsort(), based on fName
  *
  */
+
+struct stuDA_t
+{
+	char fName[20];
+    char gName[20];
+    float grade;
+};
+
 int comparo_fName(const void *pA, const void *pB)
 {
 
@@ -62,10 +70,11 @@ int comparo_grade(const void *pA, const void *pB)
 	stuDA_t student_A = *((stuDA_t*) pA); // Extract student record
 		stuDA_t student_B = *((stuDA_t*) pB);
 
-		float *grade_A = student_A.data.grade; // get grades of student
-		float *grade_B = student_B.data.grade;
+		float *grade_A = ((struct stuDA_t)pA)->grade;
+		float *grade_B = ((struct stuDA_t)pB)->grade;
+		return(grade_A-grade_B);
 
-		return strcmp(grade_A, grade_B);
+
 
 }
 
